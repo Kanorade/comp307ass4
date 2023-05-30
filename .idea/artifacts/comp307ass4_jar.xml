@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="comp307ass4:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/comp307ass4_jar</output-path>
+    <root id="archive" name="vehicle-router.jar">
+      <element id="module-output" name="comp307ass4" />
+    </root>
+  </artifact>
+</component>
