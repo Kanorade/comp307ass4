@@ -9,12 +9,12 @@ public class main {
         VRPInstance instance = VRPIO.loadInstance(instFile);
 
         VRPSolution nnSol = Utility.nearestNeighbourHeuristic(instance);
-//        nnSol.setTotalCost(Utility.calculateTotalCost(nnSol, instance));
+        nnSol.setTotalCost(Utility.calculateTotalCost(nnSol, instance));
 //
 //        VRPSolution svSol = Utility.savingsHeuristic(instance);
 //        svSol.setTotalCost(Utility.calculateTotalCost(svSol, instance));
 //
-//        VRPIO.writeSolution(nnSol, inst + "nn.sol");
+        VRPIO.writeSolution(nnSol, inst + "nn.sol");
 //        VRPIO.writeSolution(svSol, inst + "sv.sol");
     }
 }
