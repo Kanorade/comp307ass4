@@ -23,7 +23,18 @@ public class Utility {
      */
     public static double calculateTotalCost(VRPSolution solution, VRPInstance instance) {
         // TODO: Implement the function to calculate the total cost of the solution.
-        return 0.0;
+        double totalCost = 0;
+        VRPNode depot = instance.getDepot();
+        for (List<Integer> route : solution.getRoutes()) {
+            VRPNode currentNode = depot;    // start at depot
+            for (int node_id : route) {
+                VRPNode destNode = instance.getNodes().get(node_id);    // destination node
+                totalCost += calculateEuclideanDistance(currentNode, destNode);
+                currentNode = destNode;
+            }
+            totalCost += calculateEuclideanDistance(currentNode, depot);
+        }
+        return totalCost;
     }
 
     /**

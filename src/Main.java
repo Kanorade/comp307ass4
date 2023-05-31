@@ -8,6 +8,12 @@ public class main {
         File instFile = new File("files/" + inst + ".vrp");
         VRPInstance instance = VRPIO.loadInstance(instFile);
 
+        File bestFile = new File("files/" + inst + ".sol");
+        VRPSolution bestSol = VRPIO.loadSolution(bestFile);
+        System.out.println(bestSol.getRoutes());
+        bestSol.setTotalCost(Utility.calculateTotalCost(bestSol, instance));
+        System.out.println("Best total cost: " + bestSol.totalCost);
+
         VRPSolution nnSol = Utility.nearestNeighbourHeuristic(instance);
         nnSol.setTotalCost(Utility.calculateTotalCost(nnSol, instance));
 //
