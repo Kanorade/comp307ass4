@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Utility {
 
     /**
@@ -31,7 +33,65 @@ public class Utility {
      */
     public static VRPSolution nearestNeighbourHeuristic(VRPInstance instance) {
         // TODO: Implement the nearest neighbour heuristic.
-        return null;
+        // Have a way to keep track of visited nodes
+        Map<Integer, VRPNode> visited = new HashMap<>();
+        visited.put(instance.getDepot().getID(), instance.getDepot());
+
+        // Initialise solution, well, a list of routes
+        List<List<Integer>> routes = new ArrayList<>();
+
+        // Find routes until every node is visited
+        // Note: This assumes no single node has a demand higher than van capacity. In real life,
+        //      there will be places that may need multiple vans to visit the same node.
+        // 2nd Note: Originally I included the depot node in the routes (eg. each route starting and ending
+        //      with node 1) I left those lines in but commented out.
+        while (visited.size() != instance.getNodes().size()) {
+            // new empty van
+            double vanLoad = 0;   // Van load
+            // start new route, starting at depot
+            List<Integer> route = new ArrayList<>();
+            VRPNode currentLocation = instance.getDepot();
+            //route.add(currentLocation.getID());
+
+            // As long as van doesn't exceed capacity and not all nodes are visited it can proceed
+            // to the next nearest neighbour
+            boolean vanActive = true;
+            while (vanActive) {
+                VRPNode nearestNeighbour = null;    // Will stay null if every node is visited
+                double minDistance = Double.MAX_VALUE;
+                for (Map.Entry<Integer, VRPNode> nodeEntry : instance.getNodes().entrySet()) {
+                    if (visited.get(nodeEntry.getKey()) == null) {  // only care about places not visited
+                        double distance = calculateEuclideanDistance(currentLocation, nodeEntry.getValue());
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            nearestNeighbour = nodeEntry.getValue();
+                        }
+                    }
+                }
+
+                if (nearestNeighbour != null) {  // If an unvisited nearest neighbour is found
+                    // check if van won't exceed capacity when visiting nearest neighbour
+                    vanLoad += nearestNeighbour.getDemand();
+                    if (vanLoad <= instance.getCapacity()) {
+                        // Great! Lets this node then.
+                        route.add(nearestNeighbour.getID());
+                        visited.put(nearestNeighbour.getID(), nearestNeighbour);
+                        currentLocation = nearestNeighbour;
+                    } else {
+                        vanActive = false;  // Can't go any further, let's head back
+                        //route.add(instance.getDepot().getID());
+                    }
+                } else {
+                    vanActive = false;  // No more nodes left, head back.
+                    //route.add(instance.getDepot().getID());
+                }
+            }
+
+            // Add route to solution
+            routes.add(route);
+        }
+
+        return new VRPSolution(routes);
     }
 
     /**
