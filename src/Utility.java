@@ -119,16 +119,8 @@ public class Utility {
             route.add(nodeEntry.getKey());
             routes.add(route);
         }
-        // Compute and store the savings for each possible route merge
-        record MergeSaving(List<Integer> route1, List<Integer> route2, double saving) implements Comparable<Double> {
-            @Override
-            public int compareTo(Double otherSaving) {
-                if ((saving() > otherSaving)) return 1;
-                else if (saving() < otherSaving) return -1;
-                else return 0;
-            }
-        }
 
+        // Compute and store the savings for each possible route merge
         record NodePair(VRPNode node1, VRPNode node2) {}
         Map<NodePair, Double> savings = new HashMap<>();
         VRPNode depot = instance.getDepot();
@@ -145,6 +137,8 @@ public class Utility {
                 }
             }
         }
+
+        // TODO: Check all the possible/feasible route merges. feasible being within truck capacity.
 
         return null;
     }

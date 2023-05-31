@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1df761f-4118-4015-b3e8-0926566f8f7a" name="Changes" comment="Implement finding total cost for routes">
-      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5nn-py.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10.vrp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10nn-py.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/n32-k5nn-py.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/n80-k10nn-py.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/python/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +20,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -40,19 +38,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/mikej/IdeaProjects/comp307ass4/Resources/python",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikej/IdeaProjects/comp307ass4/Resources/python&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mikej\IdeaProjects\comp307ass4\Resources\python" />
@@ -102,6 +100,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main (1)" />
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.main (1)" />
         <item itemvalue="Application.main" />
       </list>
@@ -171,12 +171,24 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sol" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="calculate Euclidean Distance" />
     <MESSAGE value="Implement the nearest neighbour heuristic" />
     <MESSAGE value="Implement finding total cost for routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement finding total cost for routes" />
+    <MESSAGE value="Initialise routes, then compute and store savings for each possible merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialise routes, then compute and store savings for each possible merge" />
   </component>
 </project>

@@ -24,6 +24,7 @@ public class main {
         System.out.println(nnSol.getRoutes());
         System.out.println("Total cost: " + nnSol.getTotalCost());
 
+        System.out.println("\nSavings Heurustic: ");
         VRPSolution svSol = Utility.savingsHeuristic(instance);
 //        svSol.setTotalCost(Utility.calculateTotalCost(svSol, instance));
 //
