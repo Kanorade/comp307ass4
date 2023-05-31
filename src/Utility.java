@@ -7,8 +7,9 @@ public class Utility {
      * @return the Euclidean distance between node1 and node2
      */
     public static double calculateEuclideanDistance(VRPNode node1, VRPNode node2) {
-        // TODO: Implement the function to calculate the Euclidean distance.
-        return 0.0;
+        double xDiff = node2.getX() - node1.getX();
+        double yDiff = node2.getY() - node1.getY();
+        return Math.sqrt(Math.pow(xDiff, 2.0) + Math.pow(yDiff, 2.0));
     }
 
     /**
