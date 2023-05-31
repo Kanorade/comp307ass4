@@ -112,6 +112,40 @@ public class Utility {
      */
     public static VRPSolution savingsHeuristic(VRPInstance instance) {
         // TODO: Implement the savings heuristic.
+        // Initialize routes for each node except depot
+        List<List<Integer>> routes = new ArrayList<>();
+        for (Map.Entry<Integer, VRPNode> nodeEntry : instance.getNodes().entrySet()) {
+            List<Integer> route = new ArrayList<>();
+            route.add(nodeEntry.getKey());
+            routes.add(route);
+        }
+        // Compute and store the savings for each possible route merge
+        record MergeSaving(List<Integer> route1, List<Integer> route2, double saving) implements Comparable<Double> {
+            @Override
+            public int compareTo(Double otherSaving) {
+                if ((saving() > otherSaving)) return 1;
+                else if (saving() < otherSaving) return -1;
+                else return 0;
+            }
+        }
+
+        record NodePair(VRPNode node1, VRPNode node2) {}
+        Map<NodePair, Double> savings = new HashMap<>();
+        VRPNode depot = instance.getDepot();
+        for (Map.Entry<Integer, VRPNode> nodeEntry1 : instance.getNodes().entrySet()) {
+            VRPNode node1 = nodeEntry1.getValue();
+            for (Map.Entry<Integer, VRPNode> nodeEntry2 : instance.getNodes().entrySet()) {
+                VRPNode node2 = nodeEntry2.getValue();
+                if (node1 != node2) {
+                    // Compute cost savings if the two routes merged and store it
+                    double saved = calculateEuclideanDistance(node1, depot) +
+                            calculateEuclideanDistance(depot, node2) -
+                            calculateEuclideanDistance(node1, node2);
+                    savings.put(new NodePair(node1, node2), saved);
+                }
+            }
+        }
+
         return null;
     }
 

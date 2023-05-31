@@ -6,18 +6,27 @@ import numpy as np
 def main():
 
     # Paths to the data and solution files.
-    vrp_file = "n32-k5.vrp"  # "data/n80-k10.vrp"
-    sol_file = "n32-k5.sol"  # "data/n80-k10.sol"
+    #vrp_file = "n32-k5.vrp" 
+    vrp_file = "n80-k10.vrp"
+    #sol_file = "n32-k5.sol"  
+    sol_file = "n80-k10.sol"
+    #nn_sol_file = "n32-k5nn-py.sol"  
+    nn_sol_file = "n80-k10nn-py.sol"
 
     # Loading the VRP data file.
     px, py, demand, capacity, depot = loader.load_data(vrp_file)
 
     # Displaying to console the distance and visualizing the optimal VRP solution.
     vrp_best_sol = loader.load_solution(sol_file)
-    best_distance = utility.calculate_total_distance(vrp_best_sol, px, py, depot)
-    print("Best VRP Distance:", best_distance)
+    #best_distance = utility.calculate_total_distance(vrp_best_sol, px, py, depot)
+    #print("Best VRP Distance:", best_distance)
     utility.visualise_solution(vrp_best_sol, px, py, depot, "Optimal Solution")
 
+    vrp_nn_sol = loader.load_solution(nn_sol_file)
+    #best_distance = utility.calculate_total_distance(vrp_best_sol, px, py, depot)
+    #print("Best VRP Distance:", best_distance)
+    utility.visualise_solution(vrp_nn_sol, px, py, depot, "Nearest Neighbour Solution")
+    
     # Executing and visualizing the nearest neighbour VRP heuristic.
     # Uncomment it to do your assignment!
 

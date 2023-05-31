@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1df761f-4118-4015-b3e8-0926566f8f7a" name="Changes" comment="Implement finding total cost for routes">
-      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5.vrp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5nn.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/n80-k10nn.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5nn-py.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10.vrp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/python/n80-k10nn-py.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/n32-k5nn-py.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/n80-k10nn-py.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/python/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/python/loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp307ass4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/comp307ass4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/n32-k5nn.sol" beforeDir="false" afterPath="$PROJECT_DIR$/n32-k5nn.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/python/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
     </list>
@@ -46,6 +45,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/mikej/IdeaProjects/comp307ass4/Resources/python",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -151,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685533883421</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement finding total cost for routes">
+      <created>1685546128032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685546128033</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implement finding total cost for routes">
+      <created>1685546142828</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685546142828</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -164,16 +178,5 @@
     <MESSAGE value="Implement the nearest neighbour heuristic" />
     <MESSAGE value="Implement finding total cost for routes" />
     <option name="LAST_COMMIT_MESSAGE" value="Implement finding total cost for routes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Utility.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
