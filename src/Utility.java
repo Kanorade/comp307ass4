@@ -115,9 +115,11 @@ public class Utility {
         // Initialize routes for each node except depot
         List<List<Integer>> routes = new ArrayList<>();
         for (Map.Entry<Integer, VRPNode> nodeEntry : instance.getNodes().entrySet()) {
-            List<Integer> route = new ArrayList<>();
-            route.add(nodeEntry.getKey());
-            routes.add(route);
+            if (nodeEntry.getKey() != instance.getDepot().getID()) { // skip depot
+                List<Integer> route = new ArrayList<>();
+                route.add(nodeEntry.getKey());
+                routes.add(route);
+            }
         }
 
         // Compute and store the savings for each possible route merge
@@ -139,8 +141,50 @@ public class Utility {
         }
 
         // TODO: Check all the possible/feasible route merges. feasible being within truck capacity.
+        boolean mergesLeft = true;
+        while (mergesLeft) {
+            double mostSaved = 0;
+            List<Integer> bestRoute1 = null;
+            List<Integer> bestRoute2 = null;
+            for (List<Integer> route1 : routes) {
+                for (List<Integer> route2 : routes) {
+                    if (route1 != route2) {
+                        // need to check saving by comparing the last node in route 1 and the first node in route 2
+                        int r1_last_id = route1.get(route1.size() - 1);
+                        int r2_first_id = route2.get(0);
+                        NodePair nodePair = new NodePair(
+                                instance.getNodes().get(r1_last_id),
+                                instance.getNodes().get(r2_first_id));
+                        double saved = savings.get(nodePair);
+                        if (saved > mostSaved) {
+                            // need to check if feasible
+                            double totalLoad = 0;
+                            for (int node_id : route1) {
+                                totalLoad += instance.getNodes().get(node_id).getDemand();
+                            }
+                            for (int node_id : route2) {
+                                totalLoad += instance.getNodes().get(node_id).getDemand();
+                            }
+                            if (totalLoad <= instance.getCapacity()) {
+                                mostSaved = saved;
+                                bestRoute1 = route1;
+                                bestRoute2 = route2;
+                            }
+                        }
+                    }
+                }
+            }
 
-        return null;
+            // Merge routes with the largest saving
+            if (mostSaved == 0) {   // No possible merges if zero
+                mergesLeft = false;
+            } else {
+                bestRoute1.addAll(bestRoute2);
+                routes.remove(bestRoute2);
+            }
+        }
+
+        return new VRPSolution(routes);
     }
 
 }

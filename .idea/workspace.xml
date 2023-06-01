@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1df761f-4118-4015-b3e8-0926566f8f7a" name="Changes" comment="Implement finding total cost for routes">
+    <list default="true" id="a1df761f-4118-4015-b3e8-0926566f8f7a" name="Changes" comment="Set up a TODO to keep tabs on what to do next">
+      <change afterPath="$PROJECT_DIR$/Resources/python/n32-k5sv-py.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/n32-k5sv-py.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/n32-k5sv.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/python/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685546142828</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Set up a TODO to keep tabs on what to do next">
+      <created>1685571235044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685571235044</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -189,6 +200,7 @@
     <MESSAGE value="Implement the nearest neighbour heuristic" />
     <MESSAGE value="Implement finding total cost for routes" />
     <MESSAGE value="Initialise routes, then compute and store savings for each possible merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialise routes, then compute and store savings for each possible merge" />
+    <MESSAGE value="Set up a TODO to keep tabs on what to do next" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up a TODO to keep tabs on what to do next" />
   </component>
 </project>
