@@ -4,13 +4,13 @@ import java.util.List;
 public class main {
 
     public static void main(String[] args) {
-        //String inst = "n32-k5"; // or "n80-k10"
+        //String inst = "n32-k5";
         String inst = "n80-k10";
 
         File instFile = new File("files/" + inst + ".vrp");
         VRPInstance instance = VRPIO.loadInstance(instFile);
 
-        System.out.println("optimal solution:");
+        System.out.println("Optimal solution:");
         File bestFile = new File("files/" + inst + ".sol");
         VRPSolution bestPySol = VRPIO.loadSolution(bestFile);
         // Need to increase all the numbers by one

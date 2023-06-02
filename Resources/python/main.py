@@ -6,14 +6,14 @@ import numpy as np
 def main():
 
     # Paths to the data and solution files.
-    #vrp_file = "n32-k5.vrp" 
-    vrp_file = "n80-k10.vrp"
-    #sol_file = "n32-k5.sol"  
-    sol_file = "n80-k10.sol"
-    #nn_sol_file = "n32-k5nn-py.sol"  
-    nn_sol_file = "n80-k10nn-py.sol"
-    #sv_sol_file = "n32-k5sv-py.sol"  
-    sv_sol_file = "n80-k10sv-py.sol"
+    vrp_file = "n32-k5.vrp" 
+    #vrp_file = "n80-k10.vrp"
+    sol_file = "n32-k5.sol"  
+    #sol_file = "n80-k10.sol"
+    nn_sol_file = "n32-k5nn-py.sol"  
+    #nn_sol_file = "n80-k10nn-py.sol"
+    sv_sol_file = "n32-k5sv-py.sol"  
+    #sv_sol_file = "n80-k10sv-py.sol"
 
     # Loading the VRP data file.
     px, py, demand, capacity, depot = loader.load_data(vrp_file)
@@ -25,10 +25,10 @@ def main():
     utility.visualise_solution(vrp_best_sol, px, py, depot, "Optimal Solution")
 
     vrp_nn_sol = loader.load_solution(nn_sol_file)
-    utility.visualise_solution(vrp_nn_sol, px, py, depot, "Nearest Neighbour Hueristic")
+    utility.visualise_solution(vrp_nn_sol, px, py, depot, "Nearest Neighbour Heuristic")
 
     vrp_sv_sol = loader.load_solution(sv_sol_file)
-    utility.visualise_solution(vrp_sv_sol, px, py, depot, "Saving Hueristic")
+    utility.visualise_solution(vrp_sv_sol, px, py, depot, "Saving Heuristic")
     
     # Executing and visualizing the nearest neighbour VRP heuristic.
     # Uncomment it to do your assignment!
